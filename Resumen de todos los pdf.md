@@ -239,7 +239,7 @@ Linux es el entorno más estable y recomendado.
 
 Tras instalarlo, se aconseja configurar usuarios sin root y habilitar arranque automático.
 
-# Principales acciones con Docker
+# UD 03 Principales acciones con Docker
 
 Esta unidad explica las acciones básicas necesarias para manejar Docker desde la línea de comandos, sin utilizar interfaz gráfica. Su objetivo es que el usuario aprenda a crear, ejecutar y gestionar contenedores con soltura.
 
@@ -327,7 +327,7 @@ Conclusión
 Con estos comandos, se domina el ciclo básico de trabajo con Docker: descargar imágenes, crear contenedores, gestionarlos, ejecutar comandos internos, copiar archivos y consultar registros.
 Estas acciones forman la base para avanzar hacia temas más complejos como la gestión de volúmenes, redes o creación de imágenes personalizadas.
 
-# Gestión de imágenes en Docker
+# UD 04 Gestión de imágenes en Docker
 
 En esta unidad se explica cómo gestionar imágenes en Docker, es decir, cómo listarlas, descargarlas, eliminarlas, crear las tuyas propias, exportarlas, subirlas a Docker Hub y construirlas automáticamente mediante un Dockerfile.
 
@@ -437,7 +437,7 @@ Conclusión
 Docker facilita la gestión completa del ciclo de vida de las imágenes: desde su descarga hasta su publicación en la nube.
 Los comandos como docker images, docker pull, docker rmi, docker commit, docker push y docker build son esenciales para crear y mantener tus propios entornos de forma eficiente y automatizada.
 
-# Cheatsheet Docker
+# UD 05 Cheatsheet Docker
 Gestión de redes
 docker network create redtest
 ● Creamos la red “redtest”
