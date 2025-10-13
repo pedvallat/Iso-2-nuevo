@@ -173,8 +173,6 @@ Permite ejecutar Docker con usuarios normales:
 sudo groupadd docker
 sudo usermod -aG docker $USER
 
-(Reinicia sesión tras hacerlo)
-
 Si hay errores de permisos:
 
 sudo chown "$USER":"$USER" /home/"$USER"/.docker -R
