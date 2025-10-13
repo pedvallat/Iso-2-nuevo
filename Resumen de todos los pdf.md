@@ -238,3 +238,234 @@ Docker puede instalarse en Linux, Windows o macOS.
 Linux es el entorno más estable y recomendado.
 
 Tras instalarlo, se aconseja configurar usuarios sin root y habilitar arranque automático.
+
+# Principales acciones con Docker
+
+Esta unidad explica las acciones básicas necesarias para manejar Docker desde la línea de comandos, sin utilizar interfaz gráfica. Su objetivo es que el usuario aprenda a crear, ejecutar y gestionar contenedores con soltura.
+
+1. Imágenes y contenedores
+
+Una imagen es una plantilla de solo lectura que contiene todo lo necesario para ejecutar una aplicación.
+
+Un contenedor es una instancia en ejecución de una imagen, con un sistema de ficheros propio y un identificador único.
+
+Las imágenes y contenedores se almacenan normalmente en /var/lib/docker/.
+
+Comando útil:
+docker info
+Muestra información del sistema Docker, como el driver de almacenamiento y la ruta del directorio de datos.
+
+2. Docker Hub
+
+Es el registro público de imágenes Docker, donde se pueden buscar y descargar imágenes listas para usar.
+
+3. Comandos básicos para manejar contenedores
+Crear y ejecutar contenedores
+
+docker run [parámetros] imagen [comando]
+
+Crea un contenedor a partir de una imagen y lo arranca.
+Ejemplo inicial:
+docker run hello-world
+
+Descarga la imagen “hello-world” desde Docker Hub (si no existe localmente), la ejecuta y muestra un mensaje de prueba.
+
+Otros comandos relacionados:
+docker create imagen       # Crea un contenedor sin arrancarlo
+
+Listar contenedores
+docker ps         # Muestra contenedores en ejecución
+docker ps -a      # Muestra todos los contenedores (activos y detenidos)
+
+Parar, arrancar y reiniciar
+docker start <id/nombre>      # Inicia un contenedor detenido
+docker stop <id/nombre>       # Detiene un contenedor
+docker restart <id/nombre>    # Reinicia un contenedor
+
+Inspeccionar contenedores
+docker inspect <id/nombre>
+Muestra información detallada sobre configuración, red, volúmenes, etc.
+
+Ejecutar comandos dentro de un contenedor
+docker exec -it <id/nombre> bash
+docker exec -d <id/nombre> touch /tmp/prueba
+docker exec -it -e VAR=1 <id/nombre> bash
+Permite ejecutar comandos o abrir una shell dentro de un contenedor en ejecución.
+
+Copiar archivos entre anfitrión y contenedor
+
+docker cp <id>:/ruta/fichero ./        # Del contenedor al host
+docker cp ./archivo <id>:/ruta/        # Del host al contenedor
+
+Acceder a un proceso en ejecución
+docker attach <id/nombre>
+Conecta la terminal al proceso principal del contenedor.
+
+Ver logs de un contenedor
+
+docker logs <id/nombre>
+docker logs -f --until=2s <id/nombre>
+Muestra los registros de salida estándar y error del contenedor.
+
+Renombrar contenedores
+docker rename contenedor1 contenedor2
+
+4. Parámetros importantes de docker run
+
+Algunos de los modificadores más usados:
+Parámetro	Función
+-i	Modo interactivo (mantiene entrada estándar)
+-t	Asigna pseudo-terminal
+--name	Asigna un nombre al contenedor
+--rm	Elimina el contenedor al detenerlo
+-d	Ejecuta en segundo plano (background)
+-p	Mapea puertos (formato host:contenedor)
+-e	Define variables de entorno
+
+Conclusión
+
+Con estos comandos, se domina el ciclo básico de trabajo con Docker: descargar imágenes, crear contenedores, gestionarlos, ejecutar comandos internos, copiar archivos y consultar registros.
+Estas acciones forman la base para avanzar hacia temas más complejos como la gestión de volúmenes, redes o creación de imágenes personalizadas.
+
+# Gestión de imágenes en Docker
+
+En esta unidad se explica cómo gestionar imágenes en Docker, es decir, cómo listarlas, descargarlas, eliminarlas, crear las tuyas propias, exportarlas, subirlas a Docker Hub y construirlas automáticamente mediante un Dockerfile.
+
+Las imágenes son plantillas que sirven de base para crear contenedores. Cada imagen puede tener distintas versiones o tags, y puede modificarse o reutilizarse fácilmente.
+
+1. Listar imágenes locales y disponibles
+
+Para ver las imágenes almacenadas en tu sistema:
+docker images
+
+Filtrar por nombre o etiqueta:
+docker images ubuntu:14.04
+docker images -f=reference="u*:*04"
+
+Buscar imágenes en Docker Hub:
+docker search ubuntu
+
+2. Descargar y eliminar imágenes y contenedores
+
+Descargar una imagen desde Docker Hub:
+docker pull alpine:3.10
+
+Ver el historial o las capas de una imagen:
+docker history nginx
+
+Eliminar una imagen concreta o todas:
+docker rmi ubuntu:14.04
+docker rmi $(docker images -q)
+
+Eliminar contenedores detenidos:
+docker rm <id/nombre>
+docker rm $(docker ps -a -q)
+
+Borrar imágenes y contenedores en desuso:
+docker system prune -a
+
+3. Crear imágenes propias a partir de contenedores
+
+Puedes generar una nueva imagen desde un contenedor modificado:
+docker commit -a "Autor" -m "Comentario" <id> usuario/imagen:version
+
+Agregar una etiqueta (tag) adicional:
+docker tag usuario/imagen:2021 usuario/imagen:latest
+
+Ahora puedes ejecutar un contenedor desde tu imagen personalizada:
+docker run -it usuario/imagen:2021
+
+4. Exportar e importar imágenes
+
+Exportar una imagen a un archivo .tar:
+docker save -o copiaSeguridad.tar usuario/imagen
+
+Importar una imagen desde un archivo:
+docker load -i copiaSeguridad.tar
+
+5. Subir imágenes a Docker Hub
+
+Primero, inicia sesión:
+docker login
+
+Después, sube tu imagen al repositorio:
+docker push usuario/imagen
+
+Cualquier usuario podrá descargarla con:
+docker pull usuario/imagen
+
+6. Crear imágenes automáticamente con Dockerfile
+Un Dockerfile define cómo construir una imagen paso a paso.
+
+Ejemplo básico:
+FROM ubuntu:latest
+RUN apt update && apt install -y nano
+CMD /bin/bash
+
+Construir la imagen:
+docker build -t ubuntunano ./
+
+Principales comandos del Dockerfile:
+Comando	Función
+FROM	Define la imagen base.
+RUN	Ejecuta comandos durante la construcción.
+CMD	Indica el comando que se ejecutará al iniciar el contenedor.
+EXPOSE	Expone puertos (por ejemplo: EXPOSE 80 443).
+COPY / ADD	Copian archivos desde el host al contenedor.
+ENTRYPOINT	Define el proceso principal que ejecutará el contenedor.
+USER	Cambia el usuario que ejecuta los comandos.
+WORKDIR	Cambia el directorio de trabajo.
+ENV	Define variables de entorno.
+VOLUME, ARG, LABEL, HEALTHCHECK	Añaden opciones avanzadas y metadatos.
+
+7. Consejos para imágenes ligeras
+
+Usa imágenes pequeñas como alpine.
+
+Evita instalar paquetes innecesarios.
+
+Combina comandos con un solo RUN:
+
+RUN apt update && apt install -y nano
+
+Limpia archivos temporales:
+rm -rf /var/lib/apt/lists/*
+apt-get clean
+
+Conclusión
+
+Docker facilita la gestión completa del ciclo de vida de las imágenes: desde su descarga hasta su publicación en la nube.
+Los comandos como docker images, docker pull, docker rmi, docker commit, docker push y docker build son esenciales para crear y mantener tus propios entornos de forma eficiente y automatizada.
+
+# Cheatsheet Docker
+Gestión de redes
+docker network create redtest
+● Creamos la red “redtest”
+docker network ls
+● Nos permite ver el listado de redes existentes.
+docker network rm redtest
+● Borramos la red “redtest”.
+docker run -it --network redtest ubuntu /bin/bash
+● Conectamos el contenedor que creamos a la red “redtest”.
+docker network connect IDRED IDCONTENEDOR
+● Conectamos un contenedor a una red.
+docker network disconnect IDRED IDCONTENEDOR
+● Desconectamos un contenedor de una red
+
+Volúmenes
+docker run -d -it --name appcontainer
+ -v /home/sergi/target:/app nginx:latest
+● Creamos un contenedor y asignamos un volumen con “binding mount”.
+docker run -d -it --name appcontainer
+ -v micontenedor:/app nginx:latest
+● Creamos un contenedor y asignamos un volumen Docker llamado “micontenedor”.
+docker volume create/ls/rm mivolumen
+● Permite crear, listar o eliminar volúmenes Docker.
+docker run -d -it --tmpfs /app nginx
+● Permite crear un contenedor y asociar un volumen “tmpfs”.
+docker run --rm --volumes-from contenedor1 -v /home/sergi/backup:/backup ubuntu bash -c "cd
+/datos && tar cvf /backup/copiaseguridad.tar ."
+● Permite realizar una copia de seguridad de un volumen asociado a “contenedor1” y que se monta en “/datos”.
+Dicha copia finalmente acabará en “/home/sergi/backup” de la máquina anfitrión.
+docker volume rm $(docker volume ls -q)
+● Permite eliminar todos los lúmenes de tu máquina.
