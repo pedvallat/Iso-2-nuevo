@@ -27,3 +27,7 @@ Nos conetamos desde el cliente al server
 <img width="747" height="433" alt="Screenshot_20251023_112120" src="https://github.com/user-attachments/assets/7f7a9560-debd-4fec-ae32-45bc8c638f86" />
 
 Instalamos telnet:
+<img width="958" height="350" alt="Screenshot_20251027_082008" src="https://github.com/user-attachments/assets/8c68f3bc-7b39-48c7-bde0-ac36155b97f1" />
+
+Comprobamos que funciona:
+<img width="751" height="528" alt="Screenshot_20251027_090236" src="https://github.com/user-attachments/assets/89f63163-1c21-49fc-bcb8-f124c2a0054c" />
