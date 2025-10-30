@@ -31,3 +31,19 @@ Instalamos telnet:
 
 Comprobamos que funciona:
 <img width="751" height="528" alt="Screenshot_20251027_090236" src="https://github.com/user-attachments/assets/89f63163-1c21-49fc-bcb8-f124c2a0054c" />
+
+Para restringir el acceso remoto a través de SSH a ciertos usuarios y añadimos esta linea:
+<img width="938" height="827" alt="Screenshot_20251030_090521" src="https://github.com/user-attachments/assets/45379d1e-9971-41f6-98cd-d2b3c92db54a" />
+
+Añadamos la siguiente línea para denegar el acceso a cualquier equipo no autorizado: 
+<img width="833" height="261" alt="Screenshot_20251030_090705" src="https://github.com/user-attachments/assets/e83e1d97-88f6-4473-a899-14c11e6ac36c" />
+
+Añadimos la siguiente línea para definir específicamente el equipo que puede acceder a él:
+<img width="845" height="218" alt="Screenshot_20251030_091654" src="https://github.com/user-attachments/assets/cc5e836a-ecfa-4b96-9524-bd1f8fe70cca" />
+
+Recuerde que para que los cambios surtan efecto, el servicio debe ser reiniciado: 
+<img width="480" height="48" alt="Screenshot_20251030_091742" src="https://github.com/user-attachments/assets/a755f902-cb27-40f8-b8a3-9329f9b658e6" />
+
+Podemos ir a la máquina cliente, configurar la sesión remota e iniciar el navegador con el pedido:
+<img width="469" height="111" alt="Screenshot_20251030_093046" src="https://github.com/user-attachments/assets/8e3fe73f-de87-47f9-8121-f048d7a1375a" />
+No me deja hace este comando y a partir de aqui no puede seguir la practica.
