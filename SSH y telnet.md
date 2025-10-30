@@ -44,6 +44,9 @@ Añadimos la siguiente línea para definir específicamente el equipo que puede 
 Recuerde que para que los cambios surtan efecto, el servicio debe ser reiniciado: 
 <img width="480" height="48" alt="Screenshot_20251030_091742" src="https://github.com/user-attachments/assets/a755f902-cb27-40f8-b8a3-9329f9b658e6" />
 
+También debemos comprobar que el servidor SSH ha activado el enderezamiento del protocolo gráfico X11:
+<img width="917" height="820" alt="Screenshot_20251030_094156" src="https://github.com/user-attachments/assets/bd4f3bf1-3de3-4270-84d4-8c011271df16" />
+
 Podemos ir a la máquina cliente, configurar la sesión remota e iniciar el navegador con el pedido:
 
 <img width="469" height="111" alt="Screenshot_20251030_093046" src="https://github.com/user-attachments/assets/8e3fe73f-de87-47f9-8121-f048d7a1375a" />
