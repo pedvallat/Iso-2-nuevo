@@ -46,4 +46,5 @@ Recuerde que para que los cambios surtan efecto, el servicio debe ser reiniciado
 
 Podemos ir a la máquina cliente, configurar la sesión remota e iniciar el navegador con el pedido:
 <img width="469" height="111" alt="Screenshot_20251030_093046" src="https://github.com/user-attachments/assets/8e3fe73f-de87-47f9-8121-f048d7a1375a" />
-No me deja hace este comando y a partir de aqui no puede seguir la practica.
+
+No me deja hacer este comando y a partir de aqui no puede seguir la practica.
