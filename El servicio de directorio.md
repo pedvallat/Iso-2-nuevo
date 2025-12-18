@@ -5,17 +5,29 @@ Sudo nano pedro.ldif
 
 # Dentro del fichero añadimos estas lineas:
 dn: uid=pedro,ou=usuarios,dc=midominio
+
 objectClass: top
+
 objectClass: inetOrgPerson
+
 objectClass: posixAccount
+
 cn: Pedro
+
 sn: Pedro
+
 givenName: Pedro
+
 uid: Pedro
+
 uidNumber: 10001
+
 gidNumber: 10001
+
 homeDirectory: /home/pedro
+
 loginShell: /bin/bash
+
 mail: pedro@gmail.com
 
 # Crear un ldif para agregar una OU:
