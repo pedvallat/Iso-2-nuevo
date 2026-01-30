@@ -36,31 +36,14 @@ Crear index.php:
 
 nano apache/index.php
 
-Contenido:
-
-<html>
-    
-<body>
-    
-<h1>
-    
-Servido por: Servidor con IP <?php echo $_SERVER['SERVER_ADDR']; ?>
-
-<br>
-
-Hostname <?php echo gethostname(); ?>
-
-</h1>
-
-</body>
-
-</html>
 
 Crear configuración de Nginx (proxy):
 
 nano nginxproxy/nginx.conf
 
 Contenido:
+
+<img width="480" height="201" alt="Screenshot_20260130_115738" src="https://github.com/user-attachments/assets/7631dc91-fad9-4e57-86a0-0df7690c9c3d" />
 
 user nginx;
 
