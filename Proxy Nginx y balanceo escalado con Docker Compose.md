@@ -37,14 +37,23 @@ Crear index.php:
 nano apache/index.php
 
 Contenido:
+
 <html>
+    
 <body>
+    
 <h1>
+    
 Servido por: Servidor con IP <?php echo $_SERVER['SERVER_ADDR']; ?>
+
 <br>
+
 Hostname <?php echo gethostname(); ?>
+
 </h1>
+
 </body>
+
 </html>
 
 Crear configuración de Nginx (proxy):
@@ -86,19 +95,31 @@ Contenido:
 version: "3.9"
 
 services:
+
   apache:
+  
     build: ./apache
+    
     restart: always
+    
     ports:
+    
       - "80"
 
   nginxproxy:
+  
     image: nginx:latest
+    
     volumes:
+    
       - ./nginxproxy/nginx.conf:/etc/nginx/nginx.conf:ro
+      
     depends_on:
+    
       - apache
+      
     ports:
+    
       - "4000:4000"
 
 Levantar el sistema
