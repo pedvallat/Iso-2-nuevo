@@ -1,4 +1,5 @@
-WORPRESS + MARIADB
+# WORPRESS + MARIADB
+
 Instalar Docker:
 sudo apt update
 sudo apt install docker.io -y
