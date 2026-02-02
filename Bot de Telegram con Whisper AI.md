@@ -33,7 +33,7 @@ PASO 3. Clonar el repositorio
 En Ubuntu:
 
 cd ~
-git clone https://github.com/sergarb1/telegram-bot-whisper-cpp
+git clone https://github.com/pedvallat/telegram-bot-whisper-cpp
 cd telegram-bot-whisper-cpp
 
 PASO 4. Configurar el archivo .env
