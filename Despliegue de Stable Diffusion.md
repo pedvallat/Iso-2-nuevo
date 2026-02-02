@@ -36,7 +36,7 @@ Cierra sesión y vuelve a entrar para que tenga efecto.
 
 Clonar el repositorio de Stable Diffusion:
 
-git clone https://github.com/AbdBarho/stable-diffusion-webui-docker.git
+git clone https://github.com/pedvallat.git
 
 Entramos en el directorio:
 
