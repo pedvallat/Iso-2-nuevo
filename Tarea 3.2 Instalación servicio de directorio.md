@@ -75,11 +75,11 @@ cat /tmp/serveisbcn.ldif
 
 Añadir la información al directorio:
 
-<img width="994" height="119" alt="Captura desde 2026-05-14 11-23-28" src="https://github.com/user-attachments/assets/3e9df2e5-2875-4087-a123-5bfabd508ec1" />
+<img width="654" height="77" alt="Captura desde 2026-05-14 11-37-25" src="https://github.com/user-attachments/assets/58644d3e-748e-43a1-aaff-68d7ca167044" />
 
 Verificar que todo se añadió correctamente:
 
-<img width="994" height="138" alt="Captura desde 2026-05-14 11-24-11" src="https://github.com/user-attachments/assets/fe75ab81-a9dd-4b8e-bc80-f78107a8c36f" />
+<img width="654" height="92" alt="Captura desde 2026-05-14 11-38-29" src="https://github.com/user-attachments/assets/d16c10a9-4ffe-43d4-9c64-9dde7fcd33fb" />
 
 Actividad 5: Búsquedas en el directorio
 
