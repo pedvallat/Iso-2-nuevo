@@ -87,7 +87,11 @@ Consulta 1: Lista de usuarios con su teléfono:
 
 <img width="994" height="114" alt="Captura desde 2026-05-14 11-26-37" src="https://github.com/user-attachments/assets/286812b7-393e-4029-af33-580adda939dc" />
 
+<img width="692" height="203" alt="Captura desde 2026-05-14 11-41-38" src="https://github.com/user-attachments/assets/97ba05b5-e61b-44ba-99e5-6ba130523943" />
+
  Consulta 2: Lista de equipos de la organización:
+
+<img width="692" height="239" alt="Captura desde 2026-05-14 11-43-04" src="https://github.com/user-attachments/assets/a5f1185b-ae63-4c45-99d8-01c72f5a54f6" />
 
 <img width="994" height="112" alt="Captura desde 2026-05-14 11-27-28" src="https://github.com/user-attachments/assets/9805aded-361f-4786-806f-3bbe3eb916aa" />
 
